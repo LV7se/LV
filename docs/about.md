@@ -2,11 +2,11 @@
 
 ## 项目简介
 
-**LV Box 是《搞机工具箱》网页版**，一款 ADB 图形化工具。桌面版需要下载安装、配置环境，网页版把这一步省掉，打开网址就能用。功能是否生效，取决于设备的 Android 版本、厂商 ROM 与 ADB Shell 权限。
+**LV Box 是一款 ADB 图形化工具**，提供桌面版与浏览器版本。桌面版需要下载安装、配置环境，网页版把这一步省掉，打开网址就能用。功能是否生效，取决于设备的 Android 版本、厂商 ROM 与 ADB Shell 权限。
 
 ## 项目背景
 
-原版《搞机工具箱》是个人开发的 PC 软件，做成网页版是为了免安装、跨平台。实现上借助 Tango（ya-webadb）提供 WebADB 能力，用 xterm.js 提供 Shell 终端，在浏览器里承担本地 ADB 客户端的工作。
+原版是个人开发的 PC 软件，做成网页版是为了免安装、跨平台。实现上借助 Tango（ya-webadb）提供 WebADB 能力，用 xterm.js 提供 Shell 终端，在浏览器里承担本地 ADB 客户端的工作。
 
 ## 我们怎么想
 
@@ -37,6 +37,7 @@
 
 | 内容 | 地址 |
 | --- | --- |
+| 原项目仓库 | [原项目仓库](https://github.com/CzJam/gjgjxweb/) |
 | 本网站仓库 | [LV7se/LV](https://github.com/LV7se/LV) |
 
 ## 反馈

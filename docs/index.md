@@ -1,10 +1,11 @@
 ---
+# 首页：hero 与项目简介，正文随版本更新
 layout: home
 
 hero:
   name: LV Box
   text: 玩机，可以更简单。
-  tagline: 《搞机工具箱》的网页版本。在浏览器里直接完成 ADB 操作，免下载、免安装。
+  tagline: 在浏览器里直接完成 ADB 操作，免下载、免安装。
   image:
     src: /logo.svg
     alt: LV Box
@@ -22,7 +23,7 @@ hero:
 features:
   - icon: 🧰
     title: 同一套工具箱
-    details: 与《搞机工具箱》PC 版同源，把常用的设备操作集中在一个页面里完成。
+    details: 与桌面版同源，把常用的设备操作集中在一个页面里完成。
   - icon: 🌐
     title: 打开即用
     details: 运行在支持 WebUSB 的 Chromium 浏览器中，不需要下载安装客户端。
@@ -36,7 +37,7 @@ features:
 
 ## 这个项目是什么
 
-**LV Box 是《搞机工具箱》网页版**，一款在浏览器中运行的 ADB 图形化工具。原版是 PC 软件，网页版省掉了下载与配置环境这一步，打开网址就能用。
+**LV Box 是一款在浏览器中运行的 ADB 图形化工具**，由桌面版移植而来。原版是 PC 软件，网页版省掉了下载与配置环境这一步，打开网址就能用。
 
 ## 为什么是网页版
 
