@@ -1,0 +1,15 @@
+{
+  "name": "lv",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "description": "LV 文档站点，基于 VitePress 官方默认主题",
+  "scripts": {
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs",
+    "docs:preview": "vitepress preview docs"
+  },
+  "devDependencies": {
+    "vitepress": "^1.6.4"
+  }
+}
