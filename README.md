@@ -19,9 +19,12 @@ npm run docs:preview
 
 ```text
 docs/
-├─ .vitepress/config.mts   # 站点配置（base: /LV/）
+├─ .vitepress/
+│  ├─ config.mts           # 站点配置（base: /LV/）
+│  └─ theme/               # 默认主题扩展与功能中心组件
 ├─ public/logo.svg         # 品牌图标（favicon + 导航栏 Logo）
 ├─ index.md                # 首页
+├─ Box.md                  # 功能中心（/LV/Box）
 ├─ about.md                # 关于
 └─ changelog.md            # 更新日志
 .github/workflows/deploy.yml  # 推送 main 自动部署到 GitHub Pages

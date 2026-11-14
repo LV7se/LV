@@ -11,6 +11,9 @@ hero:
     alt: LV Box
   actions:
     - theme: brand
+      text: 进入 LV Box
+      link: /Box
+    - theme: alt
       text: 了解项目
       link: /about
     - theme: alt
