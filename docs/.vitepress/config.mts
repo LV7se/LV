@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'LV Box 官网',
-  description: '《搞机工具箱》网页版 —— 在浏览器中运行的 ADB 图形化工具',
+  title: 'LV Box',
+  description: '玩机，可以更简单。在浏览器中运行的 ADB 图形化工具',
 
   // GitHub Pages 项目站点：https://lv7se.github.io/LV/
   base: '/LV/',
@@ -90,8 +90,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: '项目代码以 GPL-3.0 许可开源',
-      copyright: '《搞机工具箱》版权归 晨钟酱Official 所有'
+      message: '以 GPL-3.0 许可开源',
+      copyright: '© 2026 LV Box'
     },
 
     darkModeSwitchLabel: '外观',
