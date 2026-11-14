@@ -2,6 +2,8 @@
 
 LV Box 的官方网站，使用 VitePress 构建并发布到 GitHub Pages。
 
+维护：LV7
+
 - 站点地址：https://lv7se.github.io/LV/
 
 ## 本地开发

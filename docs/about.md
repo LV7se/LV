@@ -10,7 +10,7 @@
 
 原版《搞机工具箱》是个人开发的 PC 软件。把它做成网页版，起点很实际：PC 版需要下载、安装、处理运行环境，换台电脑就要重来；而网页只要打开一个地址就能用，也不挑操作系统。
 
-实现上，网页版借助 [Tango](https://github.com/yume-chan/ya-webadb) 提供 WebADB 能力，通过 [xterm.js](https://github.com/xtermjs/xterm.js) 打通 Android 原生 Shell 的交互式终端。两者都是在浏览器里模拟原本由本地 ADB 客户端承担的职责，这也是「免安装」能够成立的前提。
+实现上，网页版借助 Tango（ya-webadb）提供 WebADB 能力，通过 xterm.js 打通 Android 原生 Shell 的交互式终端。两者都是在浏览器里模拟原本由本地 ADB 客户端承担的职责，这也是「免安装」能够成立的前提。
 
 ## 我们怎么想
 
@@ -42,7 +42,7 @@
 项目原创代码采用 **GNU General Public License v3.0（GPL-3.0-only）** 发布。
 
 
-网页版的 WebADB 能力来自 [Tango / ya-webadb](https://github.com/yume-chan/ya-webadb)（MIT），终端能力来自 [xterm.js](https://github.com/xtermjs/xterm.js)（MIT）。第三方组件保留各自的版权与许可，分发时请一并保留相应声明。本软件按许可证所述提供，不附带任何担保。
+网页版的 WebADB 能力来自 Tango / ya-webadb（MIT），终端能力来自 xterm.js（MIT）。第三方组件保留各自的版权与许可，分发时请一并保留相应声明。本软件按许可证所述提供，不附带任何担保。
 
 ## 项目入口
 

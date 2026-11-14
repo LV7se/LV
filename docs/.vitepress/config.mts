@@ -1,11 +1,15 @@
+// LV Box 站点配置
+// 维护：LV7
 import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'LV Box',
+
+  // 用于浏览器标签页标题与 SEO
+  title: 'LV Box 官网',
   description: '玩机，可以更简单。在浏览器中运行的 ADB 图形化工具',
 
-  // GitHub Pages 项目站点：https://lv7se.github.io/LV/
+  // 页面部署在 GitHub Pages 的子路径下，资源与路由都要带上这个前缀
   base: '/LV/',
 
   cleanUrls: true,
@@ -18,6 +22,9 @@ export default defineConfig({
   ],
 
   themeConfig: {
+    // 导航栏显示的文字，与标签页标题分开配置
+    siteTitle: 'LV Box',
+
     // 品牌图标：1:1 正方形，24×24 等比缩放，不拉伸
     logo: {
       src: '/logo.svg',
@@ -26,6 +33,7 @@ export default defineConfig({
       height: 24
     },
 
+    // 顶部导航与侧边栏共用同一组入口
     nav: [
       { text: '关于', link: '/about' },
       { text: '更新日志', link: '/changelog' }
@@ -69,11 +77,13 @@ export default defineConfig({
       }
     },
 
+    // 「在 GitHub 上编辑此页」直达本仓库对应文件
     editLink: {
       pattern: 'https://github.com/LV7se/LV/edit/main/docs/:path',
       text: '在 GitHub 上编辑此页'
     },
 
+    // 依赖完整 Git 历史，CI 中 checkout 需 fetch-depth: 0
     lastUpdated: {
       text: '最后更新于',
       formatOptions: { dateStyle: 'short', timeStyle: 'medium' }
@@ -89,6 +99,7 @@ export default defineConfig({
       level: [2, 3]
     },
 
+    // 页脚：许可证与版权信息
     footer: {
       message: '以 GPL-3.0 许可开源',
       copyright: '© 2026 LV Box'
