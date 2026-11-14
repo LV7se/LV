@@ -2,8 +2,8 @@ import { defineConfig } from 'vitepress'
 
 export default defineConfig({
   lang: 'zh-CN',
-  title: 'LV',
-  description: 'LV 项目官方网站',
+  title: 'LV Box 官网',
+  description: '《搞机工具箱》网页版 —— 在浏览器中运行的 ADB 图形化工具',
 
   // GitHub Pages 项目站点：https://lv7se.github.io/LV/
   base: '/LV/',
@@ -18,10 +18,10 @@ export default defineConfig({
   ],
 
   themeConfig: {
-    // 新品牌图标：正方形 1:1，按 24×24 等比缩放，不拉伸
+    // 品牌图标：1:1 正方形，24×24 等比缩放，不拉伸
     logo: {
       src: '/logo.svg',
-      alt: 'LV',
+      alt: 'LV Box',
       width: 24,
       height: 24
     },
@@ -34,7 +34,7 @@ export default defineConfig({
     sidebar: {
       '/': [
         {
-          text: 'LV',
+          text: 'LV Box',
           items: [
             { text: '关于', link: '/about' },
             { text: '更新日志', link: '/changelog' }
@@ -90,8 +90,8 @@ export default defineConfig({
     },
 
     footer: {
-      message: '保留所有权利',
-      copyright: '版权所有 © 2026 LV'
+      message: '项目代码以 GPL-3.0 许可开源',
+      copyright: '《搞机工具箱》版权归 晨钟酱Official 所有'
     },
 
     darkModeSwitchLabel: '外观',

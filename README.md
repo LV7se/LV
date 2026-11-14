@@ -1,6 +1,6 @@
-# LV
+# LV Box 官网
 
-LV 项目官方网站，使用 VitePress 构建并发布到 GitHub Pages。
+《搞机工具箱》网页版的资料站点，使用 VitePress 构建并发布到 GitHub Pages。
 
 - 站点地址：https://lv7se.github.io/LV/
 
