@@ -1,9 +1,8 @@
 # LV
 
-LV 项目的文档站点，基于 [VitePress](https://vitepress.dev/zh/) 官方默认主题构建。
+LV 项目官方网站，使用 VitePress 构建并发布到 GitHub Pages。
 
 - 站点地址：https://lv7se.github.io/LV/
-- 官方文档：https://vitepress.dev/zh/
 
 ## 本地开发
 
@@ -19,8 +18,10 @@ npm run docs:preview
 ```text
 docs/
 ├─ .vitepress/config.mts   # 站点配置（base: /LV/）
-├─ guide/                  # 指南页面
-└─ index.md                # 首页
+├─ public/logo.svg         # 品牌图标（favicon + 导航栏 Logo）
+├─ index.md                # 首页
+├─ about.md                # 关于
+└─ changelog.md            # 更新日志
 .github/workflows/deploy.yml  # 推送 main 自动部署到 GitHub Pages
 ```
 

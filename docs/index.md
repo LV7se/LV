@@ -1,53 +1,47 @@
 ---
-# https://vitepress.dev/zh/reference/default-theme-home-page
 layout: home
 
 hero:
   name: LV
-  text: 官方文档站点
-  tagline: 使用 VitePress 官方默认主题构建，简洁、快速、开箱即用
+  text: 项目官方网站
+  tagline: 记录、整理与分享，简单而专注
   image:
     src: /logo.svg
     alt: LV
   actions:
     - theme: brand
-      text: 快速开始
-      link: /guide/getting-started
+      text: 了解我们
+      link: /about
     - theme: alt
-      text: 什么是 VitePress？
-      link: /guide/
+      text: 更新日志
+      link: /changelog
     - theme: alt
       text: GitHub
       link: https://github.com/LV7se/LV
 
 features:
-  - icon: ⚡️
-    title: 极速构建
-    details: 基于 Vite 的静态站点构建，冷启动与热更新都保持在毫秒级别。
-  - icon: 📝
-    title: 专注内容
-    details: 使用 Markdown 编写，内置代码块高亮、目录、搜索等能力，无需分心配置。
-  - icon: 🎨
-    title: 默认主题开箱即用
-    details: 官方默认主题自带导航、侧边栏、深色模式和本地搜索，无需额外设计。
-  - icon: 🔧
-    title: 可定制
-    details: 支持自定义主题与 Vue 组件，需要时再扩展，不用一开始就背负复杂度。
+  - icon: ✦
+    title: 简洁
+    details: 页面结构清晰，只保留真正需要的内容，减少干扰。
+  - icon: ◈
+    title: 专注
+    details: 围绕 LV 项目本身组织内容，不堆砌无关信息。
+  - icon: ◎
+    title: 持续更新
+    details: 变更都会记录在更新日志中，随时可以追溯。
+  - icon: ◇
+    title: 开放
+    details: 站点源码公开在 GitHub，欢迎提出建议与改进。
 ---
 
-## 本站说明
+## 欢迎
 
-本站是 [LV](https://github.com/LV7se/LV) 项目的文档站点，完全基于 [VitePress](https://vitepress.dev/zh/) 官方默认主题与官方基础结构搭建：
+这里是 **LV** 的官方网站。
 
-- 文档源码位于 `docs/` 目录
-- 站点配置位于 `docs/.vitepress/config.mts`
-- 通过 GitHub Actions 自动构建并发布到 GitHub Pages
+## 快速导航
 
-## 下一步
-
-| 目标 | 入口 |
+| 内容 | 入口 |
 | --- | --- |
-| 本地编写与预览 | [快速开始](/guide/getting-started) |
-| 了解 Markdown 能力 | [Markdown 扩展](/guide/markdown) |
-| 在页面中使用组件 | [使用 Vue](/guide/using-vue) |
-| 自动部署 | [部署到 GitHub Pages](/guide/deploy) |
+| 项目简介与联系方式 | [关于](/about) |
+| 版本变更记录 | [更新日志](/changelog) |
+| 源码仓库 | [GitHub](https://github.com/LV7se/LV) |

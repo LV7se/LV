@@ -1,10 +1,9 @@
 import { defineConfig } from 'vitepress'
 
-// 官方中文文档：https://vitepress.dev/zh/
 export default defineConfig({
   lang: 'zh-CN',
   title: 'LV',
-  description: 'LV 项目的官方文档站点，使用 VitePress 默认主题构建',
+  description: 'LV 项目官方网站',
 
   // GitHub Pages 项目站点：https://lv7se.github.io/LV/
   base: '/LV/',
@@ -14,37 +13,31 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: '/LV/logo.svg' }],
-    ['meta', { name: 'theme-color', content: '#3c8772' }]
+    ['link', { rel: 'alternate icon', type: 'image/svg+xml', href: '/LV/logo.svg' }],
+    ['meta', { name: 'theme-color', content: '#ffffff' }]
   ],
 
-  markdown: {
-    lineNumbers: true
-  },
-
   themeConfig: {
-    logo: '/logo.svg',
+    // 新品牌图标：正方形 1:1，按 24×24 等比缩放，不拉伸
+    logo: {
+      src: '/logo.svg',
+      alt: 'LV',
+      width: 24,
+      height: 24
+    },
 
     nav: [
-      { text: '指南', link: '/guide/' },
-      {
-        text: '相关链接',
-        items: [
-          { text: 'VitePress 官方文档', link: 'https://vitepress.dev/zh/' },
-          { text: 'VitePress 源码仓库', link: 'https://github.com/vuejs/vitepress' }
-        ]
-      }
+      { text: '关于', link: '/about' },
+      { text: '更新日志', link: '/changelog' }
     ],
 
     sidebar: {
-      '/guide/': [
+      '/': [
         {
-          text: '指南',
+          text: 'LV',
           items: [
-            { text: '介绍', link: '/guide/' },
-            { text: '快速开始', link: '/guide/getting-started' },
-            { text: 'Markdown 扩展', link: '/guide/markdown' },
-            { text: '使用 Vue', link: '/guide/using-vue' },
-            { text: '部署到 GitHub Pages', link: '/guide/deploy' }
+            { text: '关于', link: '/about' },
+            { text: '更新日志', link: '/changelog' }
           ]
         }
       ]
@@ -54,18 +47,18 @@ export default defineConfig({
       { icon: 'github', link: 'https://github.com/LV7se/LV' }
     ],
 
-    // 官方默认主题内置的本地搜索
+    // 本地搜索（默认主题内置能力）
     search: {
       provider: 'local',
       options: {
         translations: {
           button: {
-            buttonText: '搜索文档',
-            buttonAriaLabel: '搜索文档'
+            buttonText: '搜索',
+            buttonAriaLabel: '搜索'
           },
           modal: {
-            noResultsText: '无法找到相关结果',
-            resetButtonTitle: '清除查询条件',
+            noResultsText: '没有找到相关内容',
+            resetButtonTitle: '清除',
             footer: {
               selectText: '选择',
               navigateText: '切换',
@@ -87,17 +80,17 @@ export default defineConfig({
     },
 
     docFooter: {
-      prev: '上一页',
-      next: '下一页'
+      prev: '上一篇',
+      next: '下一篇'
     },
 
     outline: {
-      label: '页面导航',
+      label: '本页目录',
       level: [2, 3]
     },
 
     footer: {
-      message: '基于 MIT 许可证发布',
+      message: '保留所有权利',
       copyright: '版权所有 © 2026 LV'
     },
 
