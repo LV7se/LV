@@ -36,8 +36,10 @@ docs/
 
 ## 功能中心
 
-`docs/public/Box/` 是独立运行的 LV Box 应用（单文件入口，自带依赖，不经过
-VitePress 主题渲染），构建后访问 `/LV/Box/`。
+`docs/Box/index.md` 是 VitePress 页面，通过 `BoxPage.vue` 挂载应用本体，
+访问 `/LV/Box/` 时与站点导航、页脚保持一致。
 
-- 入口：`docs/public/Box/index.html`
+- 页面入口：`docs/Box/index.md`
+- 应用代码：`docs/.vitepress/theme/box/`（app.js / app.css / markup.html）
+- 终端组件：`docs/public/box/xterm.umd.js`
 - 许可证与来源声明：`LICENSE`、`LICENSE-Tango.txt`、`LICENSE-xterm.txt`、`NOTICE`
