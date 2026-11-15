@@ -11,6 +11,9 @@ hero:
     alt: LV Box
   actions:
     - theme: brand
+      text: 进入 LV Box
+      link: /Box/
+    - theme: brand
       text: 了解项目
       link: /about
     - theme: alt
@@ -34,11 +37,6 @@ features:
     title: 开源
     details: 项目以 GPL-3.0 许可开源，源码与问题反馈都在 GitHub 上公开。
 ---
-
-<div class="vp-raw lvbox-cta">
-  <a class="VPButton medium brand" href="/LV/Box/" target="_self">进入 LV Box</a>
-  <p>在浏览器中连接设备，完成常用操作</p>
-</div>
 
 ## 这个项目是什么
 

@@ -12,6 +12,17 @@ export default defineConfig({
   // 页面部署在 GitHub Pages 的子路径下，资源与路由都要带上这个前缀
   base: '/LV/',
 
+  // 功能中心是独立应用：给它的链接补 target，让前端路由直接放行
+  transformHtml(code) {
+    return code.replace(
+      /<a((?:(?!>)[\s\S])*?)href="\/LV\/Box\/"((?:(?!>)[\s\S])*?)>/g,
+      (match, head, tail) =>
+        /\starget=/.test(head + tail)
+          ? match
+          : `<a${head}href="/LV/Box/"${tail} target="_self">`
+    )
+  },
+
   cleanUrls: true,
   lastUpdated: true,
 
