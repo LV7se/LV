@@ -1,0 +1,16 @@
+LV Box
+Copyright (C) 2026 LV7
+
+本项目的部分设备操作命令语义与参数约定，参考并改编自以 GPL-3.0-only 发布的
+开源项目 CzJam/gjgjxweb（Copyright (C) 2026 晨钟酱Official）。
+
+该部分的原始实现遵循 GNU General Public License v3.0，许可证原文见
+https://www.gnu.org/licenses/gpl-3.0.txt 。本项目同样以 GPL-3.0 发布，若你
+再分发本项目或其中改编自上述项目的部分，请一并保留本声明与相应许可证。
+
+使用的第三方组件：
+
+- Tango / ya-webadb（@yume-chan/adb 等），MIT License
+- xterm.js（@xterm/xterm），MIT License
+
+各组件保留其原有版权与许可声明。

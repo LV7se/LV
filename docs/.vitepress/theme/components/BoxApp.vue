@@ -5,8 +5,10 @@ import { state, connect, disconnect } from '../lib/adb'
 import BoxDevice from './panels/BoxDevice.vue'
 import BoxApps from './panels/BoxApps.vue'
 import BoxDisplay from './panels/BoxDisplay.vue'
+import BoxSystem from './panels/BoxSystem.vue'
 import BoxBattery from './panels/BoxBattery.vue'
 import BoxTuning from './panels/BoxTuning.vue'
+import BoxFiles from './panels/BoxFiles.vue'
 import BoxTerminal from './panels/BoxTerminal.vue'
 import BoxSettings from './panels/BoxSettings.vue'
 
@@ -14,6 +16,8 @@ const tabs = [
   { key: 'device', label: '设备', icon: '📱', component: BoxDevice },
   { key: 'apps', label: '应用', icon: '📦', component: BoxApps },
   { key: 'display', label: '显示', icon: '🖥️', component: BoxDisplay },
+  { key: 'system', label: '系统', icon: '🎛️', component: BoxSystem },
+  { key: 'files', label: '安装', icon: '📥', component: BoxFiles },
   { key: 'battery', label: '电池', icon: '🔋', component: BoxBattery },
   { key: 'tuning', label: '调节', icon: '🎚️', component: BoxTuning },
   { key: 'terminal', label: '终端', icon: '⌨️', component: BoxTerminal },

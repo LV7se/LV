@@ -305,3 +305,42 @@
     max-height: 260px;
   }
 }
+
+/* 状态栏图标与开关标签 */
+.chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.chip {
+  padding: 5px 12px;
+  border-radius: 999px;
+  border: 1px solid var(--vp-c-divider);
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  cursor: pointer;
+  user-select: none;
+}
+
+.chip.on {
+  background: var(--vp-c-brand-soft);
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+}
+
+/* 上传进度 */
+.progress {
+  height: 6px;
+  border-radius: 3px;
+  background: var(--vp-c-bg-soft);
+  overflow: hidden;
+  margin: 10px 0;
+}
+
+.progress span {
+  display: block;
+  height: 100%;
+  background: var(--vp-c-brand-1);
+  transition: width 0.2s;
+}
