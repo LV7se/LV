@@ -33,3 +33,11 @@ docs/
 ## 更新网站
 
 修改 `docs/` 下的内容后提交并推送到 `main`，GitHub Actions 会自动构建并部署。
+
+## 功能中心
+
+`docs/public/Box/` 是独立运行的 LV Box 应用（单文件入口，自带依赖，不经过
+VitePress 主题渲染），构建后访问 `/LV/Box/`。
+
+- 入口：`docs/public/Box/index.html`
+- 许可证与来源声明：`LICENSE`、`LICENSE-Tango.txt`、`LICENSE-xterm.txt`、`NOTICE`
