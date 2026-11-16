@@ -1,6 +1,7 @@
 // LV Box 站点配置
 // 维护：LV7
 import { defineConfig } from 'vitepress'
+import { LOGO_DATA_URI } from './logo'
 
 export default defineConfig({
   lang: 'zh-CN',
@@ -27,8 +28,8 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
-    ['link', { rel: 'icon', type: 'image/svg+xml', href: '/LV/logo.svg' }],
-    ['link', { rel: 'alternate icon', type: 'image/svg+xml', href: '/LV/logo.svg' }],
+    ['link', { rel: 'icon', type: 'image/svg+xml', href: LOGO_DATA_URI }],
+    ['link', { rel: 'alternate icon', type: 'image/svg+xml', href: LOGO_DATA_URI }],
     ['meta', { name: 'theme-color', content: '#ffffff' }]
   ],
 
@@ -38,7 +39,7 @@ export default defineConfig({
 
     // 品牌图标：1:1 正方形，24×24 等比缩放，不拉伸
     logo: {
-      src: '/logo.svg',
+      src: LOGO_DATA_URI,
       alt: 'LV Box',
       width: 24,
       height: 24
