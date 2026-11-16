@@ -7,10 +7,31 @@
   padding: 0;
 }
 
+/* 页面顶部那条「回到顶部」栏在应用里没有意义，隐藏 */
+.box-page .VPLocalNav {
+  display: none;
+}
+
 /* 应用按整屏高度排版，这里让出站点导航栏的高度 */
 .lvbox-app {
   --app-height: calc(100vh - var(--vp-nav-height, 64px));
   padding: 0 0 48px;
+}
+
+/* 配色跟随站点主题变量，与应用自带样式取同一套色 */
+.lvbox-app {
+  --brand: var(--vp-c-brand-1);
+  --brand-dark: var(--vp-c-brand-2);
+  --brand-soft: var(--vp-c-brand-soft);
+  --bg: var(--vp-c-bg);
+  --surface: var(--vp-c-bg-soft);
+  --ink: var(--vp-c-text-1);
+  --muted: var(--vp-c-text-2);
+  --line: var(--vp-c-divider);
+  --shadow: 0 1px 2px rgb(0 0 0 / 4%);
+  --radius: 8px;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
 }
 
 /* 顶部栏吸附在站点导航栏下方，避免互相遮挡 */
@@ -24,8 +45,15 @@
   display: none;
 }
 
-/* 兜底：主按钮在任何主题状态下都保证对比度 */
+/* 主按钮保持品牌底色与白字，避免对比度被其它规则压掉 */
 .lvbox-app .btn {
-  background: var(--brand, #4657be);
+  background: var(--brand);
   color: #fff;
+}
+
+.lvbox-app .btn.secondary,
+.lvbox-app .btn.quiet {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-divider);
 }
