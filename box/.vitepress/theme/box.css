@@ -23,3 +23,9 @@
 .lvbox-app .brand-copy {
   display: none;
 }
+
+/* 兜底：主按钮在任何主题状态下都保证对比度 */
+.lvbox-app .btn {
+  background: var(--brand, #4657be);
+  color: #fff;
+}
