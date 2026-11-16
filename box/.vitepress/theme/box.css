@@ -369,3 +369,27 @@ body[data-connected="false"] .lvbox-app nav button.active {
   color: var(--vp-c-text-3);
   border-color: var(--vp-c-divider);
 }
+
+/* 手机端也显示连接状态文字：不显示的时候卡片只剩两个按钮，信息不完整 */
+.lvbox-app .topbar .connection-chip {
+  display: inline-flex !important;
+  align-items: center;
+  gap: 8px;
+}
+
+@media (max-width: 520px) {
+  .lvbox-app .topbar .top-actions {
+    flex-wrap: wrap;
+    row-gap: 10px;
+  }
+
+  .lvbox-app .topbar .connection-chip {
+    flex: 1 0 100%;
+    margin-right: 0;
+  }
+
+  .lvbox-app .topbar .btn {
+    flex: 1 1 0;
+    justify-content: center;
+  }
+}
