@@ -1,8 +1,4 @@
 /* 功能中心页：铺满内容区，去掉文档页的默认留白 */
-.box-page .VPContent {
-  padding: 0;
-}
-
 .box-page .VPDoc {
   padding: 0;
 }
@@ -108,4 +104,41 @@ body[data-connected="false"] .lvbox-app .topbar {
   background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
   border-color: var(--vp-c-divider);
+}
+
+/* 应用顶栏改成与站点一致的浅色工具条，避免和导航栏叠成两条色带 */
+.lvbox-app .topbar {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border-bottom: 1px solid var(--vp-c-divider);
+  box-shadow: none;
+}
+
+.lvbox-app .topbar .btn {
+  background: var(--vp-button-alt-bg);
+  color: var(--vp-button-alt-text);
+  border: 1px solid var(--vp-button-alt-border);
+  box-shadow: none;
+}
+
+.lvbox-app .topbar .btn:hover:not(:disabled) {
+  background: var(--vp-button-alt-hover-bg);
+  color: var(--vp-button-alt-hover-text);
+  border-color: var(--vp-button-alt-hover-border);
+}
+
+.lvbox-app .topbar .lvbox-mark .logo-mark {
+  fill: currentColor;
+}
+
+.lvbox-app .connection-chip {
+  color: var(--vp-c-text-2);
+}
+
+/* 侧栏原本按整屏吸附，在站点导航下会盖住第一个菜单项，改成随内容排布 */
+.lvbox-app .sidebar {
+  position: relative;
+  top: 0;
+  height: auto;
+  align-self: stretch;
 }
