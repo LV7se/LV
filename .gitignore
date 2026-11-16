@@ -8,3 +8,6 @@ docs/.vitepress/cache/
 # 日志与系统文件
 *.log
 .DS_Store
+
+# LV Box 站点的构建产物（由 box:build 生成，不纳入版本库）
+docs/public/Box/
