@@ -18,7 +18,8 @@ export default defineConfig({
 
   head: [
     ['link', { rel: 'icon', type: 'image/svg+xml', href: LOGO_DATA_URI }],
-    ['meta', { name: 'theme-color', content: '#3451b2' }]
+    ['meta', { name: 'theme-color', content: '#111827' }],
+    ['meta', { name: 'theme-color', media: '(prefers-color-scheme: dark)', content: '#0b0b0c' }]
   ],
 
   themeConfig: {

@@ -331,3 +331,8 @@ body[data-connected="false"] .lvbox-app nav button.active {
   color: var(--vp-c-text-2);
   border-color: var(--vp-c-divider);
 }
+
+/* 顶栏状态卡与「选择设备」按钮在页内重复，整块隐藏 */
+.lvbox-app .topbar {
+  display: none !important;
+}
