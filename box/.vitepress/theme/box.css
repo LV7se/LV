@@ -57,3 +57,32 @@
   color: var(--vp-c-text-1);
   border-color: var(--vp-c-divider);
 }
+
+/* 应用里几处写死的颜色，统一换成站点色板，深色模式才不会突兀 */
+.lvbox-app .sidebar {
+  background: var(--vp-c-bg-soft);
+  border-right: 1px solid var(--vp-c-divider);
+}
+
+.lvbox-app .card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  box-shadow: none;
+}
+
+.lvbox-app .btn.secondary {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-divider);
+}
+
+.lvbox-app .btn.quiet {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-2);
+}
+
+.lvbox-app .tab-pills button {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  border-color: var(--vp-c-divider);
+}
