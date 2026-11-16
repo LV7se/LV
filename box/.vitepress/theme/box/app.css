@@ -254,8 +254,3 @@ body[data-connected="false"] .sidebar,body[data-connected="false"] .page,body[da
 #setting-cpu-interval{height:41px}
 
 .info-pairs .board-id-field{display:flex;align-items:baseline;gap:8px}.board-id-field>[data-info]{min-width:0;overflow-wrap:anywhere}.board-id-toggle{border:0;background:transparent;color:var(--brand);padding:0;white-space:nowrap}.board-id-toggle:hover{text-decoration:underline}
-
-
-/* 内联品牌标：只控制尺寸与间距，颜色交给图形自身 */
-.lvbox-mark{border-radius:6px;margin-right:10px;flex:none;display:block;}
-.topbar .lvbox-mark .logo-mark{fill:#ffffff}

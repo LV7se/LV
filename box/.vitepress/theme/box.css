@@ -1,21 +1,52 @@
-/* 功能中心页：铺满内容区，去掉文档页的默认留白 */
+/*
+ * LV Box 功能中心：站点级样式
+ * 结构由应用提供，这里负责配色与版式：黑白单色、状态卡 + 功能宫格 + 单列内容
+ */
+
+/* ---------- 配色：黑白 ---------- */
+:root {
+  --vp-c-brand-1: #111827;
+  --vp-c-brand-2: #374151;
+  --vp-c-brand-3: #4b5563;
+  --vp-c-brand-soft: #f3f4f6;
+  --vp-button-brand-bg: #111827;
+  --vp-button-brand-text: #ffffff;
+  --vp-button-brand-border: #111827;
+  --vp-button-brand-hover-bg: #374151;
+  --vp-button-brand-hover-text: #ffffff;
+  --vp-button-brand-hover-border: #374151;
+}
+
+.dark {
+  --vp-c-brand-1: #f3f4f6;
+  --vp-c-brand-2: #e5e7eb;
+  --vp-c-brand-3: #d1d5db;
+  --vp-c-brand-soft: #1f2937;
+  --vp-button-brand-bg: #f3f4f6;
+  --vp-button-brand-text: #111827;
+  --vp-button-brand-border: #f3f4f6;
+  --vp-button-brand-hover-bg: #e5e7eb;
+  --vp-button-brand-hover-text: #111827;
+  --vp-button-brand-hover-border: #e5e7eb;
+}
+
+/* ---------- 页面骨架 ---------- */
 .box-page .VPDoc {
   padding: 0;
 }
 
-/* 页面顶部那条「回到顶部」栏在应用里没有意义，隐藏 */
+/* 文档页的「回到顶部」栏在这里没有意义 */
 .box-page .VPLocalNav {
   display: none;
 }
 
-/* 应用按整屏高度排版，这里让出站点导航栏的高度 */
 .lvbox-app {
-  --app-height: calc(100vh - var(--vp-nav-height, 64px));
-  padding: 0 0 48px;
-}
+  --app-height: auto;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  padding: 0 0 72px;
 
-/* 配色跟随站点主题变量，与应用自带样式取同一套色 */
-.lvbox-app {
+  /* 应用自带的色板映射到站点变量 */
   --brand: var(--vp-c-brand-1);
   --brand-dark: var(--vp-c-brand-2);
   --brand-soft: var(--vp-c-brand-soft);
@@ -24,126 +55,8 @@
   --ink: var(--vp-c-text-1);
   --muted: var(--vp-c-text-2);
   --line: var(--vp-c-divider);
-  --shadow: 0 1px 2px rgb(0 0 0 / 4%);
-  --radius: 8px;
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
 }
 
-/* 顶部栏吸附在站点导航栏下方，避免互相遮挡 */
-.lvbox-app .topbar {
-  position: sticky;
-  top: var(--vp-nav-height, 64px);
-}
-
-/* 未连接时应用顶栏没有内容，收起，避免出现一条空色带 */
-body[data-connected="false"] .lvbox-app .topbar {
-  display: none;
-}
-
-/* 已连接时保留工具栏，但只留图标，标题由站点导航条承担 */
-.lvbox-app .brand-copy h1 {
-  display: none;
-}
-
-/* 连接入口：按钮与说明放在同一列里居中 */
-.lvbox-app .connection-entry {
-  padding: 48px 16px 40px;
-}
-
-.lvbox-app .connection-hint {
-  width: 100%;
-  max-width: 560px;
-  text-align: left;
-}
-
-/* 按钮直接取站点的按钮色板，浅色/深色都由 VitePress 决定 */
-.lvbox-app .btn {
-  background: var(--vp-button-brand-bg);
-  color: var(--vp-button-brand-text);
-  border-color: var(--vp-button-brand-border);
-}
-
-.lvbox-app .btn:hover:not(:disabled) {
-  background: var(--vp-button-brand-hover-bg);
-  color: var(--vp-button-brand-hover-text);
-  border-color: var(--vp-button-brand-hover-border);
-}
-
-.lvbox-app .btn.secondary,
-.lvbox-app .btn.quiet {
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-1);
-  border-color: var(--vp-c-divider);
-}
-
-/* 应用里几处写死的颜色，统一换成站点色板，深色模式才不会突兀 */
-.lvbox-app .sidebar {
-  background: var(--vp-c-bg-soft);
-  border-right: 1px solid var(--vp-c-divider);
-}
-
-.lvbox-app .card {
-  background: var(--vp-c-bg);
-  border: 1px solid var(--vp-c-divider);
-  box-shadow: none;
-}
-
-.lvbox-app .btn.secondary {
-  background: var(--vp-button-alt-bg);
-  color: var(--vp-button-alt-text);
-  border-color: var(--vp-button-alt-border);
-}
-
-.lvbox-app .btn.quiet {
-  background: var(--vp-c-bg-soft);
-  color: var(--vp-c-text-2);
-}
-
-.lvbox-app .tab-pills button {
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-2);
-  border-color: var(--vp-c-divider);
-}
-
-/* 应用顶栏改成与站点一致的浅色工具条，避免和导航栏叠成两条色带 */
-.lvbox-app .topbar {
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
-  border-bottom: 1px solid var(--vp-c-divider);
-  box-shadow: none;
-}
-
-.lvbox-app .topbar .btn {
-  background: var(--vp-button-alt-bg);
-  color: var(--vp-button-alt-text);
-  border: 1px solid var(--vp-button-alt-border);
-  box-shadow: none;
-}
-
-.lvbox-app .topbar .btn:hover:not(:disabled) {
-  background: var(--vp-button-alt-hover-bg);
-  color: var(--vp-button-alt-hover-text);
-  border-color: var(--vp-button-alt-hover-border);
-}
-
-.lvbox-app .topbar .lvbox-mark .logo-mark {
-  fill: currentColor;
-}
-
-.lvbox-app .connection-chip {
-  color: var(--vp-c-text-2);
-}
-
-/* 侧栏原本按整屏吸附，在站点导航下会盖住第一个菜单项，改成随内容排布 */
-.lvbox-app .sidebar {
-  position: relative;
-  top: 0;
-  height: auto;
-  align-self: stretch;
-}
-
-/* 输入框、下拉框跟随站点色板，深色下不会被写死的白底顶出来 */
 .lvbox-app input,
 .lvbox-app select,
 .lvbox-app textarea {
@@ -157,63 +70,108 @@ body[data-connected="false"] .lvbox-app .topbar {
   color: var(--vp-c-text-3);
 }
 
-/* ---------- 版式：单列 + 顶部横向功能切换，和原版的双栏布局区分开 ---------- */
+/* ---------- 顶栏：状态卡片 ---------- */
+.lvbox-app .topbar {
+  position: static;
+  max-width: 1080px;
+  margin: 24px auto 18px;
+  padding: 20px 24px;
+  min-height: 0;
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 18px;
+  box-shadow: none;
+}
 
+.lvbox-app .brand {
+  display: none;
+}
+
+.lvbox-app .top-actions {
+  width: 100%;
+  gap: 14px;
+}
+
+.lvbox-app .connection-chip {
+  margin-right: auto;
+  font-size: 15px;
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.lvbox-app .connection-chip .dot {
+  width: 9px;
+  height: 9px;
+}
+
+/* ---------- 导航：功能宫格 ---------- */
 .lvbox-app .shell {
   display: block;
-  min-height: auto;
+  min-height: 0;
 }
 
 .lvbox-app .sidebar {
-  position: sticky;
-  top: var(--vp-nav-height, 64px);
-  left: auto;
+  position: static;
   width: auto;
   height: auto;
   transform: none;
   box-shadow: none;
-  border-right: 0;
-  border-bottom: 1px solid var(--vp-c-divider);
-  background: var(--vp-c-bg);
-  padding: 10px 20px;
-  z-index: 6;
+  border: 0;
+  background: transparent;
+  padding: 0 20px;
+  max-width: 1080px;
+  margin: 0 auto;
 }
 
 .lvbox-app .nav {
-  display: flex;
-  gap: 6px;
-  overflow-x: auto;
-  scrollbar-width: none;
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 10px;
 }
 
-.lvbox-app .nav::-webkit-scrollbar {
-  display: none;
+@media (max-width: 900px) {
+  .lvbox-app .nav {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 640px) {
+  .lvbox-app .nav {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
 }
 
 .lvbox-app nav button {
-  flex: none;
-  min-height: 36px;
-  padding: 0 14px;
-  border-radius: 999px;
-  gap: 8px;
-  font-size: 13px;
+  flex-direction: column;
+  justify-content: center;
+  gap: 10px;
+  min-height: 94px;
+  padding: 14px 8px;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  background: var(--vp-c-bg);
   color: var(--vp-c-text-2);
-  border: 1px solid transparent;
+  font-size: 13px;
+  text-align: center;
+  transition: border-color 0.18s, background 0.18s, color 0.18s;
 }
 
 .lvbox-app nav button svg {
-  width: 16px;
-  height: 16px;
+  width: 22px;
+  height: 22px;
 }
 
 .lvbox-app nav button:hover {
-  background: var(--vp-c-bg-soft);
+  border-color: var(--vp-c-text-3);
   color: var(--vp-c-text-1);
+  background: var(--vp-c-bg);
 }
 
 .lvbox-app nav button.active {
-  background: var(--vp-c-brand-soft);
-  color: var(--vp-c-brand-1);
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
+  border-color: var(--vp-c-text-1);
 }
 
 .lvbox-app nav button.active::before {
@@ -225,52 +183,129 @@ body[data-connected="false"] .lvbox-app .topbar {
   display: none !important;
 }
 
+/* ---------- 内容区 ---------- */
 .lvbox-app .workspace {
   max-width: 1080px;
   margin: 0 auto;
-  padding: 24px 20px 64px;
-}
-
-.lvbox-app .card {
-  border-radius: 14px;
-  padding: 20px 22px;
+  padding: 28px 20px 0;
 }
 
 .lvbox-app .page-title h2 {
-  font-size: 22px;
+  font-size: 24px;
   font-weight: 650;
+  letter-spacing: -0.02em;
 }
 
-/* 顶栏收窄，只留状态与连接入口 */
-.lvbox-app .topbar {
-  min-height: 56px;
-  padding: 0 20px;
+.lvbox-app .card {
+  background: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 16px;
+  padding: 22px 24px;
+  box-shadow: none;
 }
 
-.lvbox-app .topbar .lvbox-mark {
-  width: 20px;
-  height: 20px;
+/* 连接引导：做成居中的引导块 */
+.lvbox-app .connection-entry {
+  max-width: 620px;
+  margin: 0 auto;
+  padding: 40px 16px 24px;
 }
 
-/* 配色：青绿，避开默认的靛蓝 */
-:root {
-  --vp-c-brand-1: #0f766e;
-  --vp-c-brand-2: #0d9488;
-  --vp-c-brand-3: #14b8a6;
-  --vp-c-brand-soft: #ccfbf1;
+.lvbox-app .connection-entry .btn {
+  min-height: 46px;
+  padding: 0 26px;
+  font-size: 14px;
 }
 
-.dark {
-  --vp-c-brand-1: #2dd4bf;
-  --vp-c-brand-2: #5eead4;
-  --vp-c-brand-3: #99f6e4;
-  --vp-c-brand-soft: rgb(45 212 191 / 16%);
+.lvbox-app .connection-hint {
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
 }
 
-/* 不可用的按钮用中性底色，避免白字压在浅色上 */
+/* ---------- 按钮 ---------- */
+.lvbox-app .btn {
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-text-1);
+  border-radius: 999px;
+  font-weight: 500;
+  box-shadow: none;
+}
+
+.lvbox-app .btn:hover:not(:disabled) {
+  opacity: 0.86;
+}
+
+.lvbox-app .btn.secondary,
+.lvbox-app .btn.quiet {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border-color: var(--vp-c-divider);
+}
+
 .lvbox-app .btn:disabled {
-  opacity: 1;
   background: var(--vp-c-bg-soft);
   color: var(--vp-c-text-3);
-  border: 1px solid var(--vp-c-divider);
+  border-color: var(--vp-c-divider);
+  opacity: 1;
+}
+
+/* 品牌标随文字颜色 */
+.lvbox-app .lvbox-mark {
+  width: 24px;
+  height: 24px;
+  display: block;
+  flex: none;
+}
+
+.lvbox-app .lvbox-mark .logo-mark {
+  fill: currentColor;
+}
+
+/* ---------- 小屏 ---------- */
+@media (max-width: 640px) {
+  .lvbox-app .topbar {
+    margin: 14px 14px 12px;
+    padding: 16px;
+    border-radius: 16px;
+  }
+
+  .lvbox-app .sidebar {
+    padding: 0 14px;
+  }
+
+  .lvbox-app .nav {
+    gap: 8px;
+  }
+
+  .lvbox-app nav button {
+    min-height: 82px;
+    font-size: 12px;
+    border-radius: 14px;
+  }
+
+  .lvbox-app .workspace {
+    padding: 20px 14px 0;
+  }
+
+  .lvbox-app .card {
+    padding: 18px;
+    border-radius: 14px;
+  }
+}
+
+/* 未连接时没有状态可显示，收起空卡片 */
+body[data-connected="false"] .lvbox-app .topbar {
+  display: none;
+}
+
+/* 应用把 body 背景设成了自己的灰色，这里改回站点背景 */
+body:has(.box-page) {
+  background: var(--vp-c-bg);
+}
+
+.box-page {
+  background: var(--vp-c-bg);
+  min-height: 100vh;
 }
