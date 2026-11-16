@@ -40,15 +40,38 @@
   top: var(--vp-nav-height, 64px);
 }
 
-/* 站点导航条已有品牌与菜单，隐去应用自带的标题区 */
-.lvbox-app .brand-copy {
+/* 未连接时应用顶栏没有内容，收起，避免出现一条空色带 */
+body[data-connected="false"] .lvbox-app .topbar {
   display: none;
 }
 
-/* 主按钮保持品牌底色与白字，避免对比度被其它规则压掉 */
+/* 已连接时保留工具栏，但只留图标，标题由站点导航条承担 */
+.lvbox-app .brand-copy h1 {
+  display: none;
+}
+
+/* 连接入口：按钮与说明放在同一列里居中 */
+.lvbox-app .connection-entry {
+  padding: 48px 16px 40px;
+}
+
+.lvbox-app .connection-hint {
+  width: 100%;
+  max-width: 560px;
+  text-align: left;
+}
+
+/* 按钮直接取站点的按钮色板，浅色/深色都由 VitePress 决定 */
 .lvbox-app .btn {
-  background: var(--brand);
-  color: #fff;
+  background: var(--vp-button-brand-bg);
+  color: var(--vp-button-brand-text);
+  border-color: var(--vp-button-brand-border);
+}
+
+.lvbox-app .btn:hover:not(:disabled) {
+  background: var(--vp-button-brand-hover-bg);
+  color: var(--vp-button-brand-hover-text);
+  border-color: var(--vp-button-brand-hover-border);
 }
 
 .lvbox-app .btn.secondary,
@@ -71,9 +94,9 @@
 }
 
 .lvbox-app .btn.secondary {
-  background: var(--vp-c-bg);
-  color: var(--vp-c-text-1);
-  border-color: var(--vp-c-divider);
+  background: var(--vp-button-alt-bg);
+  color: var(--vp-button-alt-text);
+  border-color: var(--vp-button-alt-border);
 }
 
 .lvbox-app .btn.quiet {
