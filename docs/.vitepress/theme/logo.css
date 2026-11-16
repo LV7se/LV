@@ -1,0 +1,10 @@
+/* 图标统一着色：SVG 自身跟随系统配色，站点切换深浅色时需要自己纠正 */
+html:not(.dark) .VPNavBarTitle .VPImage.logo,
+html:not(.dark) .VPHero .VPImage.image-src {
+  filter: brightness(0);
+}
+
+html.dark .VPNavBarTitle .VPImage.logo,
+html.dark .VPHero .VPImage.image-src {
+  filter: brightness(0) invert(1);
+}

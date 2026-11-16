@@ -1,6 +1,7 @@
 // 站点主题：沿用默认主题，只处理功能中心的跳转
 // 功能中心是独立应用，必须整页加载：给链接补 target 属性，路由见 target 会直接放行
 import DefaultTheme from 'vitepress/theme'
+import './logo.css'
 
 const SELECTOR = 'a[href$="/Box/"]'
 
