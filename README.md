@@ -21,14 +21,30 @@ npm run docs:preview
 docs/
 ├─ .vitepress/
 │  ├─ config.mts           # 站点配置（base: /LV/）
-│  └─ theme/               # 默认主题扩展与功能中心组件
-├─ public/logo.svg         # 品牌图标（favicon + 导航栏 Logo）
+│  ├─ logo.ts              # 品牌图形路径数据，内联 SVG 与 favicon 共用
+│  └─ theme/
+│     ├─ index.ts          # 主题入口：注册 Layout、处理功能中心跳转
+│     ├─ Layout.vue        # 用插槽把内联 <svg> 放进导航条与首页 hero
+│     ├─ logo.css          # 图形标尺寸（颜色交给 currentColor）
+│     └─ components/
+│        └─ BrandMark.vue  # 内联 SVG 组件
+├─ public/Box/index.html   # 功能中心（独立应用）
 ├─ index.md                # 首页
-├─ Box.md                  # 功能中心（/LV/Box）
 ├─ about.md                # 关于
 └─ changelog.md            # 更新日志
 .github/workflows/deploy.yml  # 推送 main 自动部署到 GitHub Pages
 ```
+
+## 品牌图标
+
+图形标**不落地成图片文件**，而是把 `<svg>` 直接写进页面（和 apple.com 导航条同一种做法）：
+
+- 路径数据只有一份，在 `docs/.vitepress/logo.ts`；
+- 由 `BrandMark.vue` 渲染成内联 `<svg>`，`fill="currentColor"`，颜色自动跟随深浅色主题，不需要滤镜反色；
+- 导航条与首页 hero 通过 `Layout.vue` 的插槽插入，尺寸由 `logo.css` 与 VitePress 自带的 `.image-src` 规则控制；
+- 只有浏览器标签页图标（favicon）无法内联，仍由 `logo.ts` 生成 data URI。
+
+要改图标，只改 `logo.ts` 里的 `BRAND_PATH`（以及 favicon 需要的配色），全站同步生效。
 
 ## 更新网站
 
@@ -36,8 +52,12 @@ docs/
 
 ## 功能中心
 
-`docs/public/Box/` 是独立运行的 LV Box 应用（单文件入口，自带依赖，不经过
-VitePress 主题渲染），构建后访问 `/LV/Box/`。
+`box/` 是独立的 VitePress 站点，有自己的配置、导航与 base，构建产物由主站一起发布：
 
-- 入口：`docs/public/Box/index.html`
-- 许可证与来源声明：`LICENSE`、`LICENSE-Tango.txt`、`LICENSE-xterm.txt`、`NOTICE`
+- 站点根目录：`box/`
+- 配置：`box/.vitepress/config.mts`（`base: '/LV/Box/'`）
+- 构建：`npm run box:build`（输出到 `docs/public/Box`）
+- 页面：`box/index.md`（功能中心）、`box/guide.md`（使用说明）
+- 应用代码：`box/.vitepress/theme/box/`，终端组件：`box/public/box/xterm.umd.js`
+
+完整构建用 `npm run build`（先 Box 后主站）。

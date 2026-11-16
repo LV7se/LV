@@ -1,10 +1,18 @@
-/* 图标统一着色：SVG 自身跟随系统配色，站点切换深浅色时需要自己纠正 */
-html:not(.dark) .VPNavBarTitle .VPImage.logo,
-html:not(.dark) .VPHero .VPImage.image-src {
-  filter: brightness(0);
+/* 品牌图标：内联 <svg> + fill="currentColor"
+   颜色直接继承所在元素的 color（导航条是 .title 的 --vp-c-text-1），
+   深浅色切换由主题变量完成，不再需要 filter 反色补丁。 */
+
+/* 导航条：与站点名并排，尺寸跟随 VitePress 的 --vp-nav-logo-height */
+.VPNavBarTitle .nav-brand-mark {
+  height: var(--vp-nav-logo-height);
+  width: auto;
+  margin-right: 8px;
+  flex-shrink: 0;
+  display: block;
 }
 
-html.dark .VPNavBarTitle .VPImage.logo,
-html.dark .VPHero .VPImage.image-src {
-  filter: brightness(0) invert(1);
+/* 首页 hero：位置与上限交给 VitePress 的 .image-src 规则，
+   这里只保证 SVG 作为块级元素参与居中 */
+.VPHero .hero-brand-mark {
+  display: block;
 }

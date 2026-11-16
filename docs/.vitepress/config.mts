@@ -28,6 +28,7 @@ export default defineConfig({
   lastUpdated: true,
 
   head: [
+    // 标签页图标只接受 URL，无法内联，仍用 data URI
     ['link', { rel: 'icon', type: 'image/svg+xml', href: LOGO_DATA_URI }],
     ['link', { rel: 'alternate icon', type: 'image/svg+xml', href: LOGO_DATA_URI }],
     ['meta', { name: 'theme-color', content: '#ffffff' }]
@@ -37,13 +38,9 @@ export default defineConfig({
     // 导航栏显示的文字，与标签页标题分开配置
     siteTitle: 'LV Box',
 
-    // 品牌图标：1:1 正方形，24×24 等比缩放，不拉伸
-    logo: {
-      src: LOGO_DATA_URI,
-      alt: 'LV Box',
-      width: 24,
-      height: 24
-    },
+    // 注意：不配置 themeConfig.logo。
+    // 默认主题会用 <img> 渲染它，颜色无法继承，只能靠 filter 反色。
+    // 图形标改由 theme/Layout.vue 以「内联 <svg> + currentColor」插入。
 
     // 顶部导航与侧边栏共用同一组入口
     nav: [
