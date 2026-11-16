@@ -7,8 +7,16 @@
   padding: 0;
 }
 
+/* 应用按整屏高度排版，这里让出站点导航栏的高度 */
 .lvbox-app {
+  --app-height: calc(100vh - var(--vp-nav-height, 64px));
   padding: 0 0 48px;
+}
+
+/* 顶部栏吸附在站点导航栏下方，避免互相遮挡 */
+.lvbox-app .topbar {
+  position: sticky;
+  top: var(--vp-nav-height, 64px);
 }
 
 /* 站点导航条已有品牌与菜单，隐去应用自带的标题区 */

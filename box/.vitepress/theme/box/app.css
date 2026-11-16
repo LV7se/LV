@@ -256,26 +256,6 @@ body[data-connected="false"] .sidebar,body[data-connected="false"] .page,body[da
 .info-pairs .board-id-field{display:flex;align-items:baseline;gap:8px}.board-id-field>[data-info]{min-width:0;overflow-wrap:anywhere}.board-id-toggle{border:0;background:transparent;color:var(--brand);padding:0;white-space:nowrap}.board-id-toggle:hover{text-decoration:underline}
 
 
-/* LV Box 视觉：与站点一致的 VitePress 风格 */
-:root{
-  --brand:#3451b2;--brand-dark:#2b4391;--accent:#3451b2;--brand-soft:#eef0fb;
-  --bg:#ffffff;--surface:#f6f6f7;--ink:#3c3c43;--muted:#67676c;--line:#e2e2e3;
-  --radius:12px;--shadow:0 1px 2px #0000000a;
-  font-family:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"PingFang SC","Microsoft YaHei",sans-serif;
-}
-body{background:var(--bg);color:var(--ink);-webkit-font-smoothing:antialiased;}
+/* 内联品牌标：只控制尺寸与间距，颜色交给图形自身 */
 .lvbox-mark{border-radius:6px;margin-right:10px;flex:none;display:block;}
-.brand-copy{display:flex;align-items:center;}
-.brand-copy h1{font-weight:600;font-size:16px;letter-spacing:0;}
-.topbar{background:#fffffff2;border-bottom:1px solid var(--line);backdrop-filter:saturate(180%) blur(12px);}
-.sidebar{background:var(--surface);border-right:1px solid var(--line);}
-.sidebar nav button{border-radius:8px;font-weight:500;}
-.sidebar nav button.active{background:var(--brand-soft);color:var(--brand);}
-.btn{border-radius:20px;font-weight:500;border:1px solid var(--line);background:var(--bg);transition:border-color .2s,color .2s;}
-.btn:hover:not(:disabled){border-color:var(--brand);color:var(--brand);}
-.btn.primary,.btn.brand{background:var(--brand);border-color:var(--brand);color:#fff;border-radius:20px;}
-.btn.primary:hover:not(:disabled){background:var(--brand-dark);color:#fff;}
-.card{background:var(--bg);border:1px solid var(--line);border-radius:12px;box-shadow:var(--shadow);}
-.page-title h2{font-size:20px;font-weight:600;}
-input,select,textarea{border-radius:8px;border:1px solid var(--line);}
-.toast{border-radius:10px;}
+.topbar .lvbox-mark .logo-mark{fill:#ffffff}
