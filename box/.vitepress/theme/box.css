@@ -142,3 +142,17 @@ body[data-connected="false"] .lvbox-app .topbar {
   height: auto;
   align-self: stretch;
 }
+
+/* 输入框、下拉框跟随站点色板，深色下不会被写死的白底顶出来 */
+.lvbox-app input,
+.lvbox-app select,
+.lvbox-app textarea {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.lvbox-app input::placeholder,
+.lvbox-app textarea::placeholder {
+  color: var(--vp-c-text-3);
+}
