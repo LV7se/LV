@@ -156,3 +156,121 @@ body[data-connected="false"] .lvbox-app .topbar {
 .lvbox-app textarea::placeholder {
   color: var(--vp-c-text-3);
 }
+
+/* ---------- 版式：单列 + 顶部横向功能切换，和原版的双栏布局区分开 ---------- */
+
+.lvbox-app .shell {
+  display: block;
+  min-height: auto;
+}
+
+.lvbox-app .sidebar {
+  position: sticky;
+  top: var(--vp-nav-height, 64px);
+  left: auto;
+  width: auto;
+  height: auto;
+  transform: none;
+  box-shadow: none;
+  border-right: 0;
+  border-bottom: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  padding: 10px 20px;
+  z-index: 6;
+}
+
+.lvbox-app .nav {
+  display: flex;
+  gap: 6px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.lvbox-app .nav::-webkit-scrollbar {
+  display: none;
+}
+
+.lvbox-app nav button {
+  flex: none;
+  min-height: 36px;
+  padding: 0 14px;
+  border-radius: 999px;
+  gap: 8px;
+  font-size: 13px;
+  color: var(--vp-c-text-2);
+  border: 1px solid transparent;
+}
+
+.lvbox-app nav button svg {
+  width: 16px;
+  height: 16px;
+}
+
+.lvbox-app nav button:hover {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-1);
+}
+
+.lvbox-app nav button.active {
+  background: var(--vp-c-brand-soft);
+  color: var(--vp-c-brand-1);
+}
+
+.lvbox-app nav button.active::before {
+  display: none;
+}
+
+.lvbox-app .sidebar-foot,
+.lvbox-app #menu-toggle {
+  display: none !important;
+}
+
+.lvbox-app .workspace {
+  max-width: 1080px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+}
+
+.lvbox-app .card {
+  border-radius: 14px;
+  padding: 20px 22px;
+}
+
+.lvbox-app .page-title h2 {
+  font-size: 22px;
+  font-weight: 650;
+}
+
+/* 顶栏收窄，只留状态与连接入口 */
+.lvbox-app .topbar {
+  min-height: 56px;
+  padding: 0 20px;
+}
+
+.lvbox-app .topbar .lvbox-mark {
+  width: 20px;
+  height: 20px;
+}
+
+/* 配色：青绿，避开默认的靛蓝 */
+:root {
+  --vp-c-brand-1: #0f766e;
+  --vp-c-brand-2: #0d9488;
+  --vp-c-brand-3: #14b8a6;
+  --vp-c-brand-soft: #ccfbf1;
+}
+
+.dark {
+  --vp-c-brand-1: #2dd4bf;
+  --vp-c-brand-2: #5eead4;
+  --vp-c-brand-3: #99f6e4;
+  --vp-c-brand-soft: rgb(45 212 191 / 16%);
+}
+
+/* 不可用的按钮用中性底色，避免白字压在浅色上 */
+.lvbox-app .btn:disabled {
+  opacity: 1;
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-3);
+  border: 1px solid var(--vp-c-divider);
+}
