@@ -295,10 +295,6 @@
   }
 }
 
-/* 未连接时没有状态可显示，收起空卡片 */
-body[data-connected="false"] .lvbox-app .topbar {
-  display: none;
-}
 
 /* 应用把 body 背景设成了自己的灰色，这里改回站点背景 */
 body:has(.box-page) {
@@ -332,7 +328,44 @@ body[data-connected="false"] .lvbox-app nav button.active {
   border-color: var(--vp-c-divider);
 }
 
-/* 顶栏状态卡与「选择设备」按钮在页内重复，整块隐藏 */
-.lvbox-app .topbar {
-  display: none !important;
+
+/* 状态卡里的操作区：状态在左，连接/断开在右 */
+.lvbox-app .topbar .top-actions {
+  display: flex !important;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+}
+
+.lvbox-app .topbar .connection-chip {
+  margin-right: auto;
+}
+
+.lvbox-app .topbar #connect-device {
+  min-height: 38px;
+  padding: 0 18px;
+}
+
+.lvbox-app .topbar #disconnect {
+  min-height: 38px;
+  padding: 0 18px;
+}
+
+/* 应用里 .topbar .btn 是半透明白字，这里按黑白主题重新指定，避免白底白字 */
+.lvbox-app .topbar .btn {
+  background: var(--vp-c-text-1);
+  color: var(--vp-c-bg);
+  border: 1px solid var(--vp-c-text-1);
+}
+
+.lvbox-app .topbar .btn#disconnect {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-1);
+  border: 1px solid var(--vp-c-divider);
+}
+
+.lvbox-app .topbar .btn:disabled {
+  background: var(--vp-c-bg-soft);
+  color: var(--vp-c-text-3);
+  border-color: var(--vp-c-divider);
 }
