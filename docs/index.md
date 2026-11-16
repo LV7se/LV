@@ -13,15 +13,9 @@ hero:
     - theme: brand
       text: 进入 LV Box
       link: /Box/
-    - theme: brand
+    - theme: alt
       text: 了解项目
       link: /about
-    - theme: alt
-      text: 更新日志
-      link: /changelog
-    - theme: alt
-      text: GitHub
-      link: https://github.com/LV7se/LV
 
 features:
   - icon: 🧰
