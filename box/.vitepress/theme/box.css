@@ -309,3 +309,25 @@ body:has(.box-page) {
   background: var(--vp-c-bg);
   min-height: 100vh;
 }
+
+/* 未连接时也展示功能宫格，让它像应用首页而不是一堵白墙 */
+body[data-connected="false"] .lvbox-app .sidebar {
+  display: block !important;
+}
+
+/* 未连接时宫格只是功能预览，不可点击，避免点了没反应 */
+body[data-connected="false"] .lvbox-app nav button {
+  opacity: 0.45;
+  pointer-events: none;
+}
+
+/* 未连接时宫格整体作为预览，不强调某一项，并与导航栏拉开距离 */
+body[data-connected="false"] .lvbox-app .sidebar {
+  margin-top: 20px;
+}
+
+body[data-connected="false"] .lvbox-app nav button.active {
+  background: var(--vp-c-bg);
+  color: var(--vp-c-text-2);
+  border-color: var(--vp-c-divider);
+}
